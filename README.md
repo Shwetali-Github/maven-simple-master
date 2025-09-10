@@ -46,6 +46,7 @@ da2a59b0-3c0d-4b8e-b309-fc5d3e0e7c0c
    MAVEN_HOME : /usr/share/maven
 
 8.  Managed Jenkins -> Managed Files -> Add new config (Global-Setting)-> content -> 111
+    here we have to directly adding below code on line 111 witghout making any changes
     
 
 <servers>
@@ -93,7 +94,7 @@ da2a59b0-3c0d-4b8e-b309-fc5d3e0e7c0c
 
 
 10. Edit POM.xml for server IP
-
+ note : contents of pom.xml and settings.xml shold match eg. id name 
  ex. 52.66.206.151
 
 
@@ -130,7 +131,7 @@ pipeline {
         stage('Download from Nexus') {
             steps {
                 sh """
-                curl -u admin:admin@123 -O \
+                curl -u admin:admin123 -O \
                 http://65.2.9.176:8081/repository/maven-releases/com/github/jitpack/maven-simple/0.2-SNAPSHOT/maven-simple-0.2-SNAPSHOT.jar
                 """
             }
